@@ -1,10 +1,10 @@
 #include<stdio.h>
-#include<stignal.h>
+#include<signal.h>
 #include<stdlib.h>
 #include<string.h>
 #include<unistd.h>
 
-static void printSigset(sitgset_t *set);
+static void printSigset(sigset_t *set);
 static void sigHandler(int);
 
 int main(int argc, char **argv){
@@ -59,5 +59,5 @@ static void printSigset(sigset_t *set){
 	for(i=1; i<NSIG; ++i){
 		printf((sigismember(set, i))? "1":"0");
 	}
-	puchar('\n');
+	putchar('\n');
 }
